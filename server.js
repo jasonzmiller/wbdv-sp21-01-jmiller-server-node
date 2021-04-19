@@ -1,6 +1,11 @@
 const express = require('express')
 const app = express()
 
+const mongoose = require('mongoose')
+mongoose.connect(
+    'mongodb://localhost:27017/whiteboard-01',
+    {useNewUrlParser: true, useUnifiedTopology: true})
+
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers',
@@ -9,8 +14,6 @@ app.use(function (req, res, next) {
         'GET, POST, PUT, PATCH, DELETE, OPTIONS');
     next();
 });
-
-require('./controllers/demos-controller')(app)
 
 require('./controllers/quizzes-controller')(app)
 require('./controllers/question-controller')(app)

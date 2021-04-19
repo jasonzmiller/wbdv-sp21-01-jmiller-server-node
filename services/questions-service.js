@@ -1,7 +1,8 @@
 const questions = require('./questions.json')
+const questionsModel = require('../models/questions/questions-model')
 
 findQuestionsForQuiz = (quizId) => {
-    return questions.filter(question => question.quizId === quizId)
+    return questionsModel.find({quizId: quizId})
 }
 
 module.exports = {
