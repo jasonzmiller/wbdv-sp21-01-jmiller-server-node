@@ -4,9 +4,9 @@ const quizzesSchema = mongoose.Schema({
     _id: String,
     title: String,
     questions: [{
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'QuestionsModel'
     }]
-}, {collection: "quizzes"})
+}, {collection: 'quizzes'})
 
 module.exports = quizzesSchema
