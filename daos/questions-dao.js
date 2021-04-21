@@ -5,9 +5,9 @@ const findAllQuestions = () => questionsModel.find()
 
 const findQuestionsById = (questionId) => questionsModel.findById(questionId)
 
-// const findQuestionsForQuiz = (quizId) => questionsModel.find({quizId})
+const findQuestionsForQuiz = (quizId) => questionsModel.find({quizId})
 
-const findQuestionsForQuiz = (quizId) => quizzesModel.findById(quizId).populate('questions').exec().then(quiz => quiz.questions)
+// const findQuestionsForQuiz = (quizId) => quizzesModel.findById(quizId).populate('questions').then(quiz => console.log(quiz))
 
 module.exports = {
     findAllQuestions,

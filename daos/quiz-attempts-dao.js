@@ -14,7 +14,7 @@ const findAttemptsForQuiz = (quizId) => {
     .find({
         quiz: quizId
     })
-    .populate('quiz', '_id title')
+    .populate('quiz', 'title _id')
 }
 
 const createAttempt = (quizId, attempt) => {
