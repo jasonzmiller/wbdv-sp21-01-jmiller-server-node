@@ -19,7 +19,7 @@ app.use(function (req, res, next) {
 // app.use(bodyParser.urlencoded({ extended: false }))
 // app.use(bodyParser.json())
 
-// app.use(express.json())
+app.use(express.json())
 
 require ( './controllers/quizzes-controller' ) ( app )
 require ( './controllers/question-controller' ) ( app )
